@@ -1,0 +1,6 @@
+file (GLOB headers CONFIGURE_DEPENDS "*.hpp")
+file (GLOB source CONFIGURE_DEPENDS "*.cpp")
+add_library(UMR STATIC ${source} ${headers})
+target_link_libraries(UMR PUBLIC "${LIBRARIES}")
+target_link_libraries(UMR PUBLIC ${VTK_LIBRARIES})
+target_link_libraries(UMR PUBLIC ${Boost_LIBRARIES})

@@ -1,0 +1,5 @@
+file (GLOB headers CONFIGURE_DEPENDS "*.hpp")
+file (GLOB source CONFIGURE_DEPENDS "*.cpp")
+add_library(TestingRegression SHARED ${source} ${headers})
+target_link_libraries(TestingRegression PRIVATE ${Boost_LIBRARIES})
+target_link_libraries(TestingRegression PUBLIC ${LIBRARIES} UMR)
